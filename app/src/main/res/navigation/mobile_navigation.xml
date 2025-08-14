@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_project">
+
+    <fragment
+        android:id="@+id/navigation_project"
+        android:name="com.nexlua.app.fragment.project.ProjectFragment"
+        android:label="@string/fragment_project"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_plugin"
+        android:name="com.nexlua.app.fragment.plugin.PluginFragment"
+        android:label="@string/fragment_plugin"
+        tools:layout="@layout/fragment_plugin" />
+
+    <fragment
+        android:id="@+id/navigation_docs"
+        android:name="com.nexlua.app.fragment.docs.DocsFragment"
+        android:label="@string/fragment_docs"
+        tools:layout="@layout/fragment_docs" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.nexlua.app.fragment.docs.DocsFragment"
+        android:label="@string/fragment_home"
+        tools:layout="@layout/fragment_docs" />
+</navigation>

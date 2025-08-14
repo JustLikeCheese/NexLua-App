@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_project"
+        android:icon="@drawable/ic_home_outline"
+        android:title="@string/fragment_project" />
+
+    <item
+        android:id="@+id/navigation_plugin"
+        android:icon="@drawable/ic_plugin_outline"
+        android:title="@string/fragment_plugin" />
+
+    <item
+        android:id="@+id/navigation_docs"
+        android:icon="@drawable/ic_cloud_outline"
+        android:title="@string/fragment_docs" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_account_outline"
+        android:title="@string/fragment_home" />
+</menu>

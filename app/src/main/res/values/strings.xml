@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NexLua</string>
+    <string name="fragment_project">项目</string>
+    <string name="fragment_plugin">插件</string>
+    <string name="fragment_docs">文档</string>
+    <string name="fragment_home">主页</string>
+    <!-- Fragment Project -->
+    <string name="project_info">版本: %1$s | 包名: %2$s</string>
+    <string name="search">搜索</string>
+    <string name="new_project">新建项目</string>
+    <string name="import_project">导入项目</string>
+    <string name="install_plugin">导入插件</string>
+    <string name="settings">设置..</string>
+</resources>
