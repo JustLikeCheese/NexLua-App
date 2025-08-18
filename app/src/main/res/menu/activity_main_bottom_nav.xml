@@ -3,20 +3,20 @@
 
     <item
         android:id="@+id/navigation_project"
-        android:icon="@drawable/ic_home_outline"
+        android:icon="@drawable/ic_home_selector"
         android:title="@string/fragment_project" />
 
     <item
         android:id="@+id/navigation_plugin"
-        android:icon="@drawable/ic_plugin_outline"
+        android:icon="@drawable/ic_plugin_selector"
         android:title="@string/fragment_plugin" />
 
     <item
         android:id="@+id/navigation_docs"
-        android:icon="@drawable/ic_cloud_outline"
+        android:icon="@drawable/ic_cloud_selector"
         android:title="@string/fragment_docs" />
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_account_outline"
+        android:icon="@drawable/ic_account_selector"
         android:title="@string/fragment_home" />
 </menu>

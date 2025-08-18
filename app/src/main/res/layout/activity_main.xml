@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="4dp"
-            android:paddingEnd="16dp"
             tools:ignore="RtlSymmetry">
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -35,7 +34,6 @@
                     android:id="@+id/userAvatar"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/circle_border_background"
                     android:padding="2dp"
                     android:src="@drawable/head"
                     app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
@@ -87,10 +85,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <androidx.appcompat.widget.ActionMenuView
-                    android:id="@+id/menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>

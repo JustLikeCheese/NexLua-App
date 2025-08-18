@@ -3,6 +3,9 @@ package com.nexlua.app
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -15,6 +18,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nexlua.app.databinding.ActivityMainBinding
 import com.nexlua.app.util.WrapDrawable
+import kotlin.invoke
+import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -73,45 +78,49 @@ class MainActivity : AppCompatActivity() {
         binding.searchContainer.setOnClickListener {
             Toast.makeText(this, "搜索框被点击", Toast.LENGTH_SHORT).show()
         }
-        with(binding.menu) {
-            overflowIcon = WrapDrawable(
-                R.drawable.ic_dots_vertical,
-                com.google.android.material.R.attr.colorOnSurface
-            )
-            val colorAttr = com.google.android.material.R.attr.colorOnSurfaceVariant
-            menu.add(R.string.new_project)
-                .setIcon(WrapDrawable(R.drawable.ic_folder_plus_outline, colorAttr))
-                .setOnMenuItemClickListener {
-                    true
-                }
-            menu.add(R.string.import_project)
-                .setIcon(WrapDrawable(R.drawable.ic_file_import_outline, colorAttr))
-                .setOnMenuItemClickListener {
-                    true
-                }
-            menu.add(R.string.install_plugin)
-                .setIcon(WrapDrawable(R.drawable.ic_plugin_outline, colorAttr))
-                .setOnMenuItemClickListener {
-                    true
-                }
-            menu.add(R.string.settings)
-                .setIcon(WrapDrawable(R.drawable.ic_cog_outline, colorAttr))
-                .setOnMenuItemClickListener {
-                    true
-                }
-            try {
-                val method = menu.javaClass.getDeclaredMethod(
-                    "setOptionalIconsVisible",
-                    java.lang.Boolean.TYPE
-                )
-                method.isAccessible = true
-                method.invoke(menu, true)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
         enableEdgeToEdge()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        if (menu === null) return false;
+//        menu.overflowIcon = WrapDrawable(
+//            R.drawable.ic_dots_vertical,
+//            com.google.android.material.R.attr.colorOnSurface
+//        )
+        val colorAttr = com.google.android.material.R.attr.colorOnSurfaceVariant
+        menu.add(R.string.new_project)
+            .setIcon(WrapDrawable(R.drawable.ic_folder_plus_outline, colorAttr))
+            .setOnMenuItemClickListener {
+                true
+            }
+        menu.add(R.string.import_project)
+            .setIcon(WrapDrawable(R.drawable.ic_file_import_outline, colorAttr))
+            .setOnMenuItemClickListener {
+                true
+            }
+        menu.add(R.string.install_plugin)
+            .setIcon(WrapDrawable(R.drawable.ic_plugin_outline, colorAttr))
+            .setOnMenuItemClickListener {
+                true
+            }
+        menu.add(R.string.settings)
+            .setIcon(WrapDrawable(R.drawable.ic_cog_outline, colorAttr))
+            .setOnMenuItemClickListener {
+                true
+            }
+        try {
+            val method = menu.javaClass.getDeclaredMethod(
+                "setOptionalIconsVisible",
+                java.lang.Boolean.TYPE
+            )
+            method.isAccessible = true
+            method.invoke(menu, true)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
