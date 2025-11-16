@@ -11,4 +11,14 @@
     <string name="import_project">导入项目</string>
     <string name="install_plugin">导入插件</string>
     <string name="settings">设置..</string>
+
+    <string name="create_new_project">创建新项目</string>
+    <string name="project_name">项目名称</string>
+    <string name="project_package_name">项目包名</string>
+    <string name="create_project">创建项目</string>
+    <string name="project_name_info">查看项目名称说明</string>
+    <string name="package_name_info">查看项目包名说明</string>
+    <string name="help">帮助</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
 </resources>

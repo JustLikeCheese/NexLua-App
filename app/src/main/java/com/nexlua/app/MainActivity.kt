@@ -1,11 +1,10 @@
 package com.nexlua.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.ContextMenu
 import android.view.Menu
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -16,10 +15,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.nexlua.app.data.ProjectManager
 import com.nexlua.app.databinding.ActivityMainBinding
 import com.nexlua.app.util.WrapDrawable
-import kotlin.invoke
-import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -79,10 +77,13 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "搜索框被点击", Toast.LENGTH_SHORT).show()
         }
         enableEdgeToEdge()
+        // 初始化工作目录
+        MyApplication.appdir.mkdirs()
+        ProjectManager.projectDirectory.mkdirs()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        if (menu === null) return false;
+        if (menu === null) return false
 //        menu.overflowIcon = WrapDrawable(
 //            R.drawable.ic_dots_vertical,
 //            com.google.android.material.R.attr.colorOnSurface
@@ -91,6 +92,8 @@ class MainActivity : AppCompatActivity() {
         menu.add(R.string.new_project)
             .setIcon(WrapDrawable(R.drawable.ic_folder_plus_outline, colorAttr))
             .setOnMenuItemClickListener {
+                val intent = Intent(this, CreateProjectActivity::class.java)
+                startActivity(intent)
                 true
             }
         menu.add(R.string.import_project)

@@ -18,7 +18,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this.applicationContext
-        appdir = File(Environment.getExternalStorageDirectory(), "Nexlua")
+        appdir = File(Environment.getExternalStorageDirectory(), "NexLua")
         DynamicColors.applyToActivitiesIfAvailable(this)
     }
 }

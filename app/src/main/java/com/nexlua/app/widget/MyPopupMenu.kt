@@ -25,17 +25,13 @@ class MyPopupMenu(private val context: Context, anchor: View) : PopupMenu(contex
 
     }
 
-    fun add(title: String, icon: Drawable, listener: OnMenuItemClickListener): MenuItem {
+    fun add(title: String, icon: Drawable, listener: MenuItem.OnMenuItemClickListener): MenuItem {
         val wrappedDrawable = DrawableCompat.wrap(icon.mutate())
         DrawableCompat.setTintList(wrappedDrawable, colorStateList)
-        with(menu.add(title)) {
-            setIcon(wrappedDrawable)
-            setOnMenuItemClickListener(listener)
-            return this
-        }
+        return menu.add(title).setIcon(wrappedDrawable).setOnMenuItemClickListener(listener)
     }
 
-    fun add(title: String, icon: Int, listener: OnMenuItemClickListener): MenuItem {
+    fun add(title: String, icon: Int, listener: MenuItem.OnMenuItemClickListener): MenuItem {
         return add(title, AppCompatResources.getDrawable(context, icon)!!, listener)
     }
 }
