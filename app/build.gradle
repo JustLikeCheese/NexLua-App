@@ -67,9 +67,9 @@ dependencies {
     // NexLua
     implementation(libs.luajava)
     // Sora Editor
-    implementation(libs.editor.bom)
-    implementation libs.editor
-    implementation libs.language.textmate
+    implementation platform(libs.rosemoe.editor.bom)
+    implementation libs.rosemoe.editor
+    implementation libs.rosemoe.language.textmate
     // Lua Editor
     implementation project(":editor")
 }

@@ -2,6 +2,7 @@
 agp = "8.13.1"
 circleimageview = "3.1.0"
 desugar_jdk_libs = "2.1.5"
+editorBom = "0.23.7"
 editorBomVersion = "0.23.7"
 kotlin = "2.2.21"
 coreKtx = "1.17.0"
@@ -23,13 +24,13 @@ identityJvm = "202411.1"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
-editor = { module = "io.github.rosemoe:editor" }
-editor-bom = { module = "io.github.rosemoe:editor-bom", version.ref = "editorBomVersion" }
+rosemoe-editor = { module = "io.github.rosemoe:editor" }
+rosemoe-editor-bom = { module = "io.github.rosemoe:editor-bom", version.ref = "editorBom" }
+rosemoe-language-textmate = { module = "io.github.rosemoe:language-textmate" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-language-textmate = { module = "io.github.rosemoe:language-textmate" }
 luajava = { module = "io.github.justlikecheese.nexlua:LuaJava", version.ref = "luajava" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
